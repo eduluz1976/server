@@ -1,0 +1,25 @@
+{
+    "name": "eduluz1976/server",
+    "description": "Server in PHP to expose distributed services",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Eduardo Luz",
+            "email": "eduluz1976@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "eduluz1976\\server\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "6.3",
+        "clue/socket-raw": "1.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.0"
+    }
+}
