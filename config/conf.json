@@ -1,0 +1,10 @@
+{
+  "dev" : {
+    "listen_addr_range" : "0.0.0.0:37000-37100",
+    "num_min_connections" : 2,
+    "num_max_connections" : 6
+  },
+  "prod" : {
+
+  }
+}
