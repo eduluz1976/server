@@ -15,7 +15,7 @@ trait ConfigurationManager
     /**
      * @var string
      */
-    protected $configContext='dev';
+    protected $configContext=false;
 
     /**
      * @var array
@@ -35,7 +35,6 @@ trait ConfigurationManager
      * @throws exception\ConfigException
      */
     protected function validateConfigContext() {
-
         if (!isset($this->configContents[$this->configContext]) ||  !$this->configContents[$this->configContext]) {
             throw new exception\ConfigException("Configuration context " . $this->configContext." not found", exception\ConfigException::EXCEPTION_INVALID_CONTEXT);
         }
@@ -49,6 +48,12 @@ trait ConfigurationManager
      * @throws exception\ConfigException
      */
     public function getConfig($key, $default=false) {
+
+        if (!$this->configContext) {
+            $context = key($this->configContents);
+            $this->setConfigContext($context);
+        }
+
         $this->validateConfigContext();
 
         if (isset($this->configContents[$this->configContext][$key])) {
