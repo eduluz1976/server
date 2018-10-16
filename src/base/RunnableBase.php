@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eduardoluz
- * Date: 2018-10-10
- * Time: 10:07 PM
- */
 
-namespace eduluz1976\server;
+namespace eduluz1976\server\base;
 
 
-use eduluz1976\server\exception\PluginException;
-
-abstract class PluginBase
+abstract class RunnableBase
 {
     /**
      * @var string
@@ -60,33 +52,6 @@ abstract class PluginBase
     }
 
 
-
-
-
-    /**
-     * PluginBase constructor.
-     * @param array $spec
-     * @param mixed $code
-     */
-    public function __construct($spec=[],$code=false)
-    {
-        if ($code) {
-            $this->setCode($code);
-        }
-
-        if (!empty($spec)) {
-            $this->bind($spec);
-        }
-    }
-
-
-    /**
-     * Pass the initialization parameters to plugin
-     *
-     * @param array $spec
-     * @return mixed
-     */
-    protected abstract function bind($spec=[]);
 
 
     /**

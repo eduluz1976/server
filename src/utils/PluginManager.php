@@ -3,7 +3,7 @@ namespace eduluz1976\server\utils;
 
 
 use eduluz1976\server\exception\PluginException;
-use eduluz1976\server\PluginBase;
+use eduluz1976\server\base\PluginBase;
 
 trait PluginManager
 {
@@ -24,7 +24,6 @@ trait PluginManager
         }
 
         $this->lsPlugins[$code] = $plugin;
-//        $this->lsPlugins[$code] =
     }
 
     /**
@@ -54,8 +53,12 @@ trait PluginManager
         return $this->lsPlugins[$code];
     }
 
-    public function getPluginList() {
 
+    /**
+     * @return array list of Plugins
+     */
+    public function getPluginList() {
+        return $this->lsPlugins;
     }
 
 
@@ -76,20 +79,9 @@ trait PluginManager
             throw new PluginException("Class $className does not exists", PluginException::EXCEPTION_CLASS_DOES_NOT_EXISTS);
         }
 
-//        $lsParents = class_parents($className,true);
-//
-//
-//        echo "\n $className \n";
-//        print_r($lsParents); //exit;
-
-
         $obj = new $className($spec, $code);
 
-
-
-        if (!is_subclass_of($obj,\eduluz1976\server\PluginBase::class)) {
-
-//        if (!($obj instanceof \eduluz1976\server\PluginBase)) {
+        if (!is_subclass_of($obj,\eduluz1976\server\base\PluginBase::class)) {
             throw new PluginException("Class $className does not extends PluginBase class", PluginException::EXCEPTION_INVALID_CLASS);
         }
 
@@ -97,7 +89,6 @@ trait PluginManager
         if ($code) {
             $obj->setCode($code);
         }
-
 
         return $obj;
     }

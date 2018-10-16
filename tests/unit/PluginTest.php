@@ -2,6 +2,7 @@
 namespace eduluz1976\server;
 
 
+use eduluz1976\server\base\PluginBase;
 use eduluz1976\server\exception\PluginException;
 use eduluz1976\server\utils\PluginManager;
 
