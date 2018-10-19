@@ -5,6 +5,7 @@ namespace eduluz1976\server;
 
 use eduluz1976\server\utils\ConfigurationManager;
 use eduluz1976\server\utils\EventManager;
+use eduluz1976\server\utils\LogManager;
 use eduluz1976\server\utils\PluginManager;
 
 /**
@@ -23,6 +24,7 @@ class Node
     use ConfigurationManager;
     use PluginManager;
     use EventManager;
+    use LogManager;
 
     const EVENT_INIT = 'onInit';
     const EVENT_START = 'onInit';

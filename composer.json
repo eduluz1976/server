@@ -18,7 +18,8 @@
     "require": {
         "guzzlehttp/guzzle": "6.3",
         "clue/socket-raw": "1.3.0",
-        "react/react": "dev-master"
+        "react/react": "dev-master",
+        "monolog/monolog": "^2.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "7.0"

@@ -1,10 +1,9 @@
 <?php
-namespace eduluz1976\server\base;
 
+namespace eduluz1976\server\base;
 
 abstract class EventBase extends RunnableBase
 {
-
     /**
      * @var Node
      */
@@ -27,9 +26,4 @@ abstract class EventBase extends RunnableBase
         $this->container = $container;
         return $this;
     }
-
-
-
-
-
 }

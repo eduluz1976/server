@@ -8,7 +8,6 @@
 
 namespace eduluz1976\server\exception;
 
-
 class RangeException extends \Exception
 {
     const EXCEPTION_EMPTY_RANGE = 5000;
@@ -16,5 +15,4 @@ class RangeException extends \Exception
     const EXCEPTION_INVALID_PORT_CHARACTER = 5002;
     const EXCEPTION_INVALID_PORT_INTERVAL = 5003;
     const EXCEPTION_ADDR_IS_MISSING = 5004;
-
 }

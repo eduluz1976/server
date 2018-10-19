@@ -2,7 +2,6 @@
 
 namespace eduluz1976\server\base;
 
-
 abstract class RunnableBase
 {
     /**
@@ -51,9 +50,6 @@ abstract class RunnableBase
         return $this;
     }
 
-
-
-
     /**
      * Execute the $command, passing parameters
      *
@@ -61,7 +57,5 @@ abstract class RunnableBase
      * @param array $parms
      * @return mixed
      */
-    public abstract function exec($command, $parms=[]);
-
-
+    abstract public function exec($command, $parms = []);
 }
